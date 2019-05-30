@@ -67,7 +67,14 @@ int main(void)
  */
 Node_t *newNode(const char *value, Node_t *next)
 {
-    return NULL;
+	Node_t* v = (Node_t*) malloc(sizeof(Node_t));
+	if(v == NULL)
+	{
+   		 return NULL;
+	}
+	(*v).value = strdup(value);
+	v -> next = next;
+	return v;
 }
 
 /**
@@ -77,7 +84,10 @@ Node_t *newNode(const char *value, Node_t *next)
  */
 Node_t *deleteNode(Node_t *current, char **value)
 {
-    return NULL;
+	*value = (*current).value;
+	Node_t * temp  = current -> next;
+	free(current);
+    return temp;
 }
 
 /**
@@ -88,7 +98,16 @@ Node_t *deleteNode(Node_t *current, char **value)
  */
 bool pop(Node_t **Stack, char **value)
 {
-    return false;
+	if(Stack == NULL)
+	{
+		return false;
+	}
+	{
+		(*Stack)= deleteNode(*Stack, value);
+		
+		return true;
+	}
+	
 }
 
 /**
@@ -97,6 +116,12 @@ bool pop(Node_t **Stack, char **value)
  * return true if everything is successfull
  */
 bool push(Node_t **Stack, const char *value)
-{
-    return false;
+{	
+	Node_t * head = newNode(value, *(Stack));
+	if(head == NULL)
+	{
+		return false;
+	}
+	*Stack = head;
+	return true;
 }
