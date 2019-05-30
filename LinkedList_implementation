@@ -1,0 +1,43 @@
+
+/**
+ * return a NULL pointer if it failed to allocate memory
+ * makes a copy of the string `value` on the heap (see strdup())
+ * and stores the pointer in the newly created Node.
+ * sets the next node to be the parameter `next`
+ */
+Node_t *newNode(const char *value, Node_t *next)
+{
+    return NULL;
+}
+
+/**
+ * puts the current node string pointer at the `value` parameter
+ * free's the `current` Node.
+ * and return the next node.
+ */
+Node_t *deleteNode(Node_t *current, char **value)
+{
+    return NULL;
+}
+
+/**
+ * Pop the string from the top of the stack using deleteNode
+ * update the top of the stack
+ * puts the popped string onto `value`
+ * return true on success
+ */
+bool pop(Node_t **Stack, char **value)
+{
+    return false;
+}
+
+/**
+ * Push the string to the top of the stack using newNode
+ * update the top of the stack
+ * return true if everything is successfull
+ */
+bool push(Node_t **Stack, const char *value)
+{
+    return false;
+}
+
